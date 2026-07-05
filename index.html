@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STEEL SURGE — Arena FPS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Fullscreen overlays -->
+<div id="damage-flash"></div>
+<div id="lowhp-vignette"></div>
+
+<!-- In-game HUD -->
+<div id="hud" class="hidden">
+  <div id="crosshair">
+    <div class="ch-dot"></div>
+    <div class="ch-line ch-t"></div>
+    <div class="ch-line ch-b"></div>
+    <div class="ch-line ch-l"></div>
+    <div class="ch-line ch-r"></div>
+  </div>
+  <div id="hitmarker">
+    <div class="hm hm1"></div>
+    <div class="hm hm2"></div>
+  </div>
+  <div id="reload-wrap"><div id="reload-bar"></div><div id="reload-text">RELOADING</div></div>
+
+  <div id="hud-top">
+    <div class="hud-stat"><span class="hud-label">WAVE</span><span id="wave-num">—</span></div>
+    <div class="hud-stat"><span class="hud-label">HOSTILES</span><span id="enemies-num">0</span></div>
+    <div class="hud-stat"><span class="hud-label">SCORE</span><span id="score-num">0</span></div>
+  </div>
+
+  <div id="hud-bl">
+    <div id="hp-num">100</div>
+    <div id="hp-bar"><div id="hp-fill"></div></div>
+  </div>
+
+  <div id="hud-br">
+    <div id="weapon-name">AR-77 VANDAL</div>
+    <div id="ammo"><span id="ammo-mag">30</span><span id="ammo-sep">/</span><span id="ammo-reserve">150</span></div>
+  </div>
+
+  <div id="killfeed"></div>
+  <div id="banner" class="hidden"><div id="banner-title"></div><div id="banner-sub"></div></div>
+</div>
+
+<!-- Main menu -->
+<div id="menu" class="screen">
+  <div class="menu-inner">
+    <h1 class="title">STEEL&nbsp;SURGE</h1>
+    <div class="subtitle">WAVE-SURVIVAL ARENA FPS</div>
+    <button id="play-btn" class="big-btn">DEPLOY</button>
+    <div class="sens-row">
+      <span>MOUSE SENSITIVITY</span>
+      <input type="range" id="sens-slider" min="1" max="20" value="5">
+      <span id="sens-val">5</span>
+    </div>
+    <div class="controls">
+      <div><b>WASD</b> move &nbsp; <b>MOUSE</b> aim &nbsp; <b>LMB</b> fire &nbsp; <b>RMB</b> aim down sights</div>
+      <div><b>SHIFT</b> sprint &nbsp; <b>SPACE</b> jump &nbsp; <b>C</b> crouch &nbsp; <b>R</b> reload &nbsp; <b>1/2/3 · WHEEL</b> weapons</div>
+      <div class="hint">Headshots deal double damage. Enemies drop health and ammo. Survive.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Pause -->
+<div id="pause" class="screen hidden">
+  <div class="menu-inner">
+    <h1 class="title small">PAUSED</h1>
+    <button id="resume-btn" class="big-btn">RESUME</button>
+    <div class="hint">Pointer was released — click resume to re-engage.</div>
+  </div>
+</div>
+
+<!-- Game over -->
+<div id="gameover" class="screen hidden">
+  <div class="menu-inner">
+    <h1 class="title small red">K.I.A.</h1>
+    <div id="go-stats"></div>
+    <button id="restart-btn" class="big-btn">REDEPLOY</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/world.js"></script>
+<script src="js/player.js"></script>
+<script src="js/weapons.js"></script>
+<script src="js/enemies.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
